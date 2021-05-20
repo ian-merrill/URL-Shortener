@@ -8,7 +8,7 @@
 # for the first time
 setup:
 	docker-compose up -d
-	docker run -d --rm -e POSTGRES_PASSWORD=password postgres
+	docker run -d --rm postgres
 	npm run install
 
 # `make server` will be used after `make setup` in order to start
