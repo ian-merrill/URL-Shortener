@@ -22,18 +22,24 @@ test("saveUrl saves new Url records to the database", async () => {
 	await saveUrl(
 		"https://sequelize.org/master/class/lib/model.js~Model.html#static-method-findOrCreate"
 	)
-	await saveUrl(
-		"https://sequelize.org/master/class/lib/model.js~Model.html#static-method-findOrCreate"
-	)
-	let record = await Url.findAll()
-	expect(record).toBeTruthy()
-	expect(record.length).toBe(1)
 	await saveUrl("https://www.npmjs.com/package/validator")
 	await saveUrl(
 		"https://www.amazon.com/LG-34WN80C-B-inch-Connectivity-Compatibility/dp/B07YGZ7C1K/ref=sr_1_8?crid=2M7FX0FXOMA4&dchild=1&keywords=widescreen+monitor&qid=1621472006&s=electronics&sprefix=widescreen%2Celectronics%2C209&sr=1-8"
 	)
 	let records = await Url.findAll()
 	expect(records.length).toBe(3)
+})
+
+test("saveUrl saves only one record per url saved to the database", async () => {
+	await saveUrl(
+		"https://sequelize.org/master/class/lib/model.js~Model.html#static-method-findOrCreate"
+	)
+	await saveUrl(
+		"https://sequelize.org/master/class/lib/model.js~Model.html#static-method-findOrCreate"
+	)
+	let record = await Url.findAll()
+	expect(record).toBeTruthy()
+	expect(record.length).toBe(1)
 })
 
 test("create short url should give unique url", () => {
