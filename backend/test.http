@@ -1,0 +1,17 @@
+POST http://localhost:8081/longUrl HTTP/1.1
+Content-Type: application/json
+
+{
+ "url": "https://blog.bitsrc.io/vs-codes-rest-client-plugin-is-all-you-need-to-make-api-calls-e9e95fcfd85a"
+}
+
+###
+
+POST http://localhost:8081/shortUrl HTTP/1.1
+Content-Type: application/json
+
+{
+  "shortUrl": "http://localhost:8080/1UPCBwQGQicmfviYiLfZRX"
+}
+
+###
