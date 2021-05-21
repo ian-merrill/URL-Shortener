@@ -1,8 +1,15 @@
 {
+	"proxy": "http://localhost:8081",
 	"scripts": {
-		"install": "cd backend && yarn && cd ../frontend && yarn"
+		"backend-install": "cd backend && yarn",
+		"frontend-install": "cd frontend && yarn",
+		"backend-start": "cd backend && yarn start",
+		"frontend-start": "cd frontend && yarn start",
+		"packages": "yarn && concurrently \"npm run backend-install\" \"npm run frontend-install\"",
+		"start": "concurrently \"npm run backend-start\" \"npm run frontend-start\"",
+		"test": "cd backend && yarn test"
 	},
-	"dependencies": {
-		"react-router-dom": "^5.2.0"
+	"devDependencies": {
+		"concurrently": "^6.1.0"
 	}
 }

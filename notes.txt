@@ -1,0 +1,18 @@
+I ran this code using the following environment:
+
+WSL2 - Ubuntu 20.04.2 LTS
+nodejs v15.13.0 (Require nodejs ^14 to use optional chaining )
+yarn 1.22.5
+Docker version 20.10.6
+
+To run the project use the included Makefile.
+
+make setup:  builds containerized postgres database, installs packages in root, backend and frontend projects
+
+make server: using concurrently spins up backend project (Express)
+             on http://localhost:8081 and the frontend (React) project at http://localhost:8080
+
+make test:   executes backend logic unit tests (Jest)
+
+I had a lot of fun putting this together! Thanks again for your consideration.
+- Ian Merrill

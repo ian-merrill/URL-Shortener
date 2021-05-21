@@ -9,13 +9,17 @@
 setup:
 	docker-compose up -d
 	docker run -d --rm postgres
-	npm run install
+	yarn packages
 
 # `make server` will be used after `make setup` in order to start
 # an http server process that listens on any unreserved port
 #	of your choice (e.g. 8080). 
 server:
+	yarn start
+
 # `make test` will be used after `make setup` in order to run
 # your test suite.
 
 test:
+	yarn test
+
