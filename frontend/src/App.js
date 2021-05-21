@@ -24,7 +24,7 @@ export default function App() {
 						transform: "translate(-50%, -50%)",
 					}}
 				>
-					<Grid container direction="column" justify="center">
+					<Grid container>
 						<UrlForm />
 						<ShortUrl />
 					</Grid>

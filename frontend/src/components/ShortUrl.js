@@ -13,7 +13,6 @@ const useStyles = makeStyles({
 		maxWidth: 800,
 		minWidth: 475,
 	},
-	textField: {},
 	btn: { height: 55 },
 })
 
@@ -36,7 +35,6 @@ export default function ShortUrl({ url }) {
 								disabled={true}
 								variant="outlined"
 								fullWidth={true}
-								style={{ color: copied ? "blue" : "red" }}
 								InputProps={{
 									readOnly: true,
 								}}

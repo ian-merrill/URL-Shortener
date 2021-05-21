@@ -4,7 +4,7 @@ const app = express()
 
 app.use(express.json())
 
-app.post("/longUrl", async (req, res) => {
+app.post("/url", async (req, res) => {
 	try {
 		if (req?.body?.url) {
 			const shortUrl = await saveUrl(req.body.url)
