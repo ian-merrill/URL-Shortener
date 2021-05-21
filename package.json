@@ -1,5 +1,8 @@
 {
 	"scripts": {
 		"install": "cd backend && yarn && cd ../frontend && yarn"
+	},
+	"dependencies": {
+		"react-router-dom": "^5.2.0"
 	}
 }

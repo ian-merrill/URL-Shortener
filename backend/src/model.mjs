@@ -23,7 +23,7 @@ export const Url = sequelize.define("Url", {
 		allowNull: false,
 	},
 	longUrl: {
-		type: DataTypes.STRING,
+		type: DataTypes.STRING(1000),
 		allowNull: false,
 	},
 })

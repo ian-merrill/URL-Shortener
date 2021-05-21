@@ -1,7 +1,8 @@
 import express from "express"
+import cors from "cors"
 import { saveUrl, getLongUrl } from "./logic.mjs"
 const app = express()
-
+app.use(cors())
 app.use(express.json())
 
 app.post("/url", async (req, res) => {
