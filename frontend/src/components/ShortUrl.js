@@ -20,7 +20,6 @@ export default function ShortUrl({ url }) {
 	const [shortUrl, setShortUrl] = useState(null)
 	const [copied, setCopied] = useState(false)
 	useEffect(() => {
-		console.log(url)
 		setShortUrl(url)
 	})
 
