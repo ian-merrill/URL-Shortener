@@ -18,7 +18,6 @@ const useStyles = makeStyles({
 export default function ShortUrl({ url }) {
 	const classes = useStyles()
 	const [shortUrl, setShortUrl] = useState(null)
-	const [copied, setCopied] = useState(false)
 	useEffect(() => {
 		setShortUrl(url)
 	})

@@ -18,15 +18,21 @@ export default function App() {
 	const [shortUrl, setShortUrl] = useState(null)
 
 	async function fetchShortUrl(url) {
-		const res = await fetch("http://localhost:8081/url", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ url }),
-		})
-		const { shortUrl } = await res.json()
-		setShortUrl(shortUrl)
+		try {
+			const res = await fetch("http://localhost:8081/url", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ url }),
+			})
+			if (res.status === 200) {
+				const { shortUrl } = await res.json()
+				setShortUrl(shortUrl)
+			}
+		} catch (error) {
+			console.error(error)
+		}
 	}
 
 	return (

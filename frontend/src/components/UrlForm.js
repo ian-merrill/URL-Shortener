@@ -44,7 +44,6 @@ export default function UrlForm({ shorten }) {
 					<Grid item xs={12}>
 						<TextField
 							error={error}
-							focused={false}
 							helperText={error && "format: (https://www.website.com/long/url)"}
 							label="Url"
 							variant="outlined"
